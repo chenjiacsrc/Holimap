@@ -1,4 +1,4 @@
-function f = master_LMA(t,x,para,input,T)
+function f = master_LMA(t,x,para,input,momor,T)
 
 % -------------------------------------------------------------------------
 % model parameters
@@ -7,7 +7,7 @@ sigmau = para(6); sigmab = para(7); N = para(8);
 
 % -------------------------------------------------------------------------
 % derived parameters
-p = B/(B+1); q = 1-p;
+p = B/(B+1); q = 1-p; temp = momor;
 time = input(1,:); inputg0 = input(2,:);
 inputp0 = input(3,:); inputp1 = input(4,:);
 inputpp0 = input(5,:); inputpp1 = input(6,:);

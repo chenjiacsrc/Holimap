@@ -70,7 +70,7 @@ input(1,:) = time; input(2,:) = sol(:,1);
 input(3,:) = sol(:,2); input(4,:) = sol(:,3);
 input(5,:) = sol(:,4); input(6,:) = sol(:,5);
 
-[~,sol] = ode23(@master_LMA,[0,Tc],birth,[],para,input,Tc);
+[~,sol] = ode23(@master_LMA,[0,Tc],birth,[],para,input,momor,Tc);
 distlma = sol(end,1:N)+sol(end,N+1:2*N);
 distlma = max(distlma,zeros(1,N));
 plot(0:maxm-1,distlma(1:maxm),'r'); hold on
